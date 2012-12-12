@@ -25,13 +25,15 @@ if $LINK_DIRS ; then FIND_ARGS="-maxdepth 1"; else FIND_ARGS=""; fi
 for f in $(IFS=" "; find ./ $FIND_ARGS) ; do
 	f=$(echo $f | cut -c 3-)
 	TT="$TARGET/$f"
-	if [ "$f" == $(basename $0) ] ; then continue; fi # ignore if the target is this script...
 	if [ -e $TT ] ; then continue; fi # ignore if the target already exists...
+	if [ $f == $(basename $0) ] ; then continue; fi # ignore if the target is this script...
+	if [ $f == "README.md" ] ; then continue; fi 
+	if [ $f == ".git" ] ; then continue; fi # ignore the .git folder
+	if [ "`echo $f | cut -b -5 `" == ".git/" ] ; then continue; fi # ignore the files & folders in .git folder
+
 	if ! $LINK_DIRS && [ -d $f ] ; then
-		if [ "`echo $f | cut -b -5 `" == ".git"  ] ; then continue; fi # ignore the git file
 		$PRE_RUN mkdir -p $TT;
 	else
-		if [ "`echo $f | cut -b -5 `" == ".git/" ] ; then continue; fi
 		$PRE_RUN ln -s -t $(dirname $TT)  $(pwd)/$f; # dirname cuts off the trailing quote =/
 	fi
 done
