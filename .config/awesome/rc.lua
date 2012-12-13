@@ -407,8 +407,15 @@ client.add_signal("focus", function(c) c.border_color = beautiful.border_focus e
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
--- Autostart
-awful.util.spawn_with_shell("dex -a -e Awesome")
-awful.util.spawn_with_shell("xrandr --output HDMI1 --auto --primary --right-of LVDS1")
+-- Autostart  (needed if not using a DE like XFCE or GNOME)
+-- awful.util.spawn_with_shell("dex -a -e Awesome")
+-- awful.util.spawn_with_shell("xrandr --output HDMI1 --auto --primary --right-of LVDS1")
+
+-- Custom Layout
+if screen.count() == 2 then
+	for index,value in pairs(tags[2]) do
+		awful.tag.setncol(2,value)
+	end
+end
 
 awful.screen.focus(2)
