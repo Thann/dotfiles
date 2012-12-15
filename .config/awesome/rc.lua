@@ -109,7 +109,8 @@ myawesomemenu = {
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "open terminal", terminal },
-                                    { "shutdown", "gksudo shutdown -P 0" }
+                                    { "log off", "xfce4-session-logout" }
+                                    --{ "shutdown", "gksudo shutdown -P 0" }
                                   }
                         })
 
