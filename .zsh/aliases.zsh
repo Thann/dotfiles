@@ -1,5 +1,5 @@
-alias ls='ls --color=auto --block-size=M'
-alias la='ls -la --color=auto --block-size=M'
+alias ls='ls --color=auto'
+alias la='ls -lha --color=auto'
 alias ll=la
 
 alias vim='vim -c start'
