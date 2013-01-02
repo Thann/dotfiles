@@ -1,7 +1,4 @@
-[user]
-	name = Jon Knapp
-	email = jon.knapp@rightscale.com
 [push]
 	default = current
 [diff]
-	external = /home/thann/.bin/meldiff.sh
+	external = ~/.bin/meldiff.sh
