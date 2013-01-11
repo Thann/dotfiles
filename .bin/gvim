@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/gvim --remote-tab-silent $@ 2> /dev/null || /usr/bin/gvim --remote-send "<ESC>:tabnew<CR>"
