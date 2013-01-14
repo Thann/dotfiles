@@ -10,7 +10,7 @@ SOURCE=$(dirname $0)
 
 #TODO: make this a command line arg.
 # set to `true` or `false` :
-LINK_DIRS=true 	# Make symlinks to dirs instead of `mkdir` then symlinking the contents.
+LINK_DIRS=false	# Make symlinks to dirs instead of `mkdir` then symlinking the contents.
 
 # END: User-Config-Vars.
 DRY_RUN=false # Dont make any links
