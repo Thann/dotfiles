@@ -1,3 +1,5 @@
 #!/bin/sh
+# Makes gvim behave as a single-session editor.
+
 REAL_GVIM=/usr/bin/gvim
 $REAL_GVIM --remote-tab-silent $@ 2> /dev/null || $REAL_GVIM --remote-send "<ESC>:tabnew<CR>" 2>/dev/null || $REAL_GVIM $@
