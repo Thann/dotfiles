@@ -38,7 +38,8 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+--beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init(".config/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "xfce4-terminal"
@@ -113,7 +114,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibox
 -- Create a textclock widget
-mytextclock = awful.widget.textclock()
+mytextclock = awful.widget.textclock(" %a %b %d, %H:%M ")
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -444,11 +445,12 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Custom Layout
 if screen.count() == 2 then
-        for index,value in pairs(tags[2]) do
-                awful.tag.setnmaster(2,value)
-		-- awful.tag.setncol(2,value)
-        end
+    for index,value in pairs(tags[2]) do
+        -- awful.tag.setnmaster(2,value)
+        -- awful.tag.setncol(2,value)
+    end
 end
 
 awful.screen.focus(2)
+awful.tag.setnmaster(2,tags[2][1])
 -- }}}
