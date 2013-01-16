@@ -1,2 +1,5 @@
 syntax enable
-colorscheme darkspectrum
+colorscheme elflord
+
+" set spell
+set spelllang=en_us
