@@ -27,10 +27,10 @@ if $LINK_DIRS ; then FIND_ARGS="-maxdepth 0"; else FIND_ARGS=""; fi
 # Loop through the base files
 for p in $(IFS=" "; find ./ -maxdepth 1) ; do
 	p=$(echo $p | cut -c 3-)
-	if [ "`echo $p | cut -b -4 `" == ".git" ] ; then continue; fi # ignore the files & folders in that start with '.git'
+	if [ "`echo $p | cut -b -4 `" == ".git" ] ; then continue; fi # ignore the files & folders that start with '.git'
 	if [ "`echo $p | cut -b -1 `" != "." ] ; then continue; fi # ignore the files & folders that don't start with a dot
 
-	# loop through all files with prefix $p
+	# Loop through all files & folders with prefix $p
 	for f in $(IFS=" "; find ./$p $FIND_ARGS) ; do
 		f=$(echo $f | cut -c 3-)
 		TT="$TARGET/$f"

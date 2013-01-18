@@ -7,6 +7,6 @@ set guifont=Monospace\ 11
 
 " Add horizontal scrollbar
 set guioptions+=b
-" Hide toobar
+" Hide toolbar
 set guioptions-=T
 
