@@ -1,4 +1,11 @@
+[user]
+	name = Jon Knapp
+	email = jon.knapp@rightscale.com
 [push]
 	default = current
+[difftool]
+	prompt = false
+[alias]
+	dt = difftool
 [diff]
-	external = ~/.bin/meldiff.sh
+	tool = meld
