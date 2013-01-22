@@ -1,6 +1,3 @@
-[user]
-	name = Jon Knapp
-	email = jon.knapp@rightscale.com
 [push]
 	default = current
 [difftool]
