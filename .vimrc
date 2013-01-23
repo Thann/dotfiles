@@ -20,4 +20,5 @@ nmap <leader>c<space> <plug>NERDCommenterToggle
 xmap <leader>c<space> <plug>NERDCommenterToggle
 
 cmap tt TagbarToggle
+nmap tt :TagbarOpenAutoClose<CR>
 
