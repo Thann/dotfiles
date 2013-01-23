@@ -1,3 +1,6 @@
 [submodule "detectindent"]
 	path = detectindent
 	url = git@github.com:ciaranm/detectindent.git
+[submodule "nerdcommenter"]
+	path = nerdcommenter
+	url = git@github.com:scrooloose/nerdcommenter.git

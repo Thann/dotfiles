@@ -1,6 +1,8 @@
 syntax enable
 colorscheme elflord
 
+filetype plugin on
+
 " set spell
 set spelllang=en_us
 
