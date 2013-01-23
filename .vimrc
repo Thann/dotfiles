@@ -19,3 +19,5 @@ xmap <C-e> <plug>NERDCommenterToggle
 nmap <leader>c<space> <plug>NERDCommenterToggle
 xmap <leader>c<space> <plug>NERDCommenterToggle
 
+cmap tt TagbarToggle
+
