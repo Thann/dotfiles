@@ -1,7 +1,7 @@
 syntax enable
 colorscheme elflord
 
-" Set spell
+" set spell
 set spelllang=en_us
 
 " Default indent properties
@@ -21,6 +21,7 @@ map zz za
 filetype plugin on
 nmap <C-e> <plug>NERDCommenterToggle
 xmap <C-e> <plug>NERDCommenterToggle
+imap <C-e> <ESC><plug>NERDCommenterToggle i
 nmap <leader>c<space> <plug>NERDCommenterToggle
 xmap <leader>c<space> <plug>NERDCommenterToggle
 
