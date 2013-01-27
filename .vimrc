@@ -4,6 +4,9 @@ colorscheme elflord
 " set spell
 set spelllang=en_us
 
+" Allow sudo-write
+command W w !sudo tee % > /dev/null
+
 " Default indent properties
 set ts=4 sts=4 sw=4 noet ai
 
