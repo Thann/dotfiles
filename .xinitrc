@@ -1,8 +1,13 @@
+#!/bin/bash
 # X startup configurtation
 
 # Setup Monitors
 xrandr --output DVI-I-3 --auto --primary
 xrandr --output DVI-I-2 --auto --rotate right --right-of DVI-I-3
+#xrandr --output HDMI1 --auto --primary --right-of LVDS1
+
+# Apply .Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 # Lower Mouse Sensitivity
 xinput --set-prop 'Razer Razer DeathAdder' 'Device Accel Constant Deceleration' 1.4
