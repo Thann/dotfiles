@@ -32,3 +32,6 @@ xmap <leader>c<space> <plug>NERDCommenterToggle
 cmap tt TagbarToggle
 nmap tt :TagbarOpenAutoClose<CR>
 
+" Custom command shortcuts
+command Q q!
+
