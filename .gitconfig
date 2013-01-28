@@ -4,5 +4,6 @@
 	prompt = false
 [alias]
 	dt = difftool
+	pl = pull --ff-only
 [diff]
 	tool = meld
