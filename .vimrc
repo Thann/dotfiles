@@ -5,7 +5,17 @@ colorscheme elflord
 set spelllang=en_us
 
 " Allow sudo-write
-command W w !sudo tee % > /dev/null
+function SuWrite()
+	:doautocmd BufWritePre
+	:w !sudo tee % > /dev/null
+	:if v:shell_error
+		echo "Write Failed"
+	:else
+		:redraw!
+		:e!
+	:endif
+endfunction
+command W exec SuWrite()
 
 " Default indent properties
 set ts=4 sts=4 sw=4 noet ai
