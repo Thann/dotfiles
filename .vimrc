@@ -6,16 +6,16 @@ set spelllang=en_us
 
 " Allow sudo-write
 function SuWrite()
-	:doautocmd BufWritePre
-	:w !sudo tee % > /dev/null
-	:if v:shell_error
+	doautocmd BufWritePre
+	w !sudo tee % > /dev/null
+	if v:shell_error
 		echo "Write Failed"
-	:else
-		:redraw!
-		:e!
-	:endif
+	else
+		redraw!
+		e!
+	endif
 endfunction
-command W exec SuWrite()
+command W exec "let lnum=line('.')" | exec SuWrite() | exec lnum
 
 " Default indent properties
 set ts=4 sts=4 sw=4 noet ai
