@@ -26,7 +26,7 @@ set ts=4 sts=4 sw=4 noet ai
 " Detect indent size and type
 autocmd BufReadPost * :DetectIndent
 " Trim trailing whitespace on save
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * exec "let lnum=line('.')" | :%s/\s\+$//e  | exec lnum
 
 " Set folding options
 set foldmethod=syntax
@@ -44,6 +44,14 @@ xmap <leader>c<space> <plug>NERDCommenterToggle
 " Tagbar shortcuts
 cmap tt TagbarToggle
 nmap tt :TagbarOpenAutoClose<CR>
+
+" Custom keybinds
+nnoremap <C-PageUp> :tabnext<CR>
+nnoremap <C-PageDown> :tabprev<CR>
+inoremap <C-PageUp> <Esc>:tabnext<CR>
+inoremap <C-PageDown> <Esc>:tabprev<CR>
+xnoremap <C-PageUp> <Esc>:tabnext<CR>
+xnoremap <C-PageDown> <Esc>:tabprev<CR>
 
 " Custom command shortcuts
 command Q q!
