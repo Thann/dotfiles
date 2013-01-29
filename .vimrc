@@ -4,6 +4,9 @@ colorscheme elflord
 " set spell
 set spelllang=en_us
 
+" Highlight search results
+set hlsearch
+
 " Allow sudo-write
 function SuWrite()
 	doautocmd BufWritePre
