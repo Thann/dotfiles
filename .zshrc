@@ -1,11 +1,10 @@
 ZSH=$HOME/.zsh
 
-# load zsh specific stuff
+# load zsh configurations
 for config_file ($ZSH/*.zsh) source $config_file
 
 # load syntax highlighting
-# https://github.com/zsh-users/zsh-syntax-highlighting
-. $ZSH/zsh-syntax-highlighting/*.zsh
+source $ZSH/zsh-syntax-highlighting/*.zsh
 
 ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
