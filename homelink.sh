@@ -18,11 +18,14 @@ DRY_RUN=false # Dont make any links
 if [ "$1" == "--help" ] ; then echo $USAGE; exit; fi
 if [ "$1" == "-d" ] ; then DRY_RUN=true; echo "DRY RUN!"; fi
 
-cd $SOURCE
+cd $SOURCE > /dev/null
 IFS=$'\n'
 if $DEBUG ; then echo "==DEBUG=="; DRY_RUN=true; fi
 if $DRY_RUN ; then PRE_RUN="echo"; else PRE_RUN=""; fi
 if $LINK_DIRS ; then FIND_ARGS="-maxdepth 0"; else FIND_ARGS=""; fi
+
+# Make sure git submodules are up to date.
+git submodule update --init
 
 # Loop through the base files
 for p in $(IFS=" "; find ./ -maxdepth 1) ; do
