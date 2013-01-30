@@ -8,3 +8,8 @@ alias vi='vim'
 alias systemctl='sudo systemctl'
 
 alias gs='git status'
+
+# todo.sh shortcuts
+alias t='todo.sh -c'
+alias tl='t ls'
+

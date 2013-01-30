@@ -7,3 +7,6 @@
 [submodule "tagbar"]
 	path = tagbar
 	url = git://github.com/majutsushi/tagbar.git
+[submodule "todo.txt-cli"]
+	path = todo.txt-cli
+	url = git://github.com/ginatrapani/todo.txt-cli.git
