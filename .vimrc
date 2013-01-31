@@ -4,6 +4,10 @@ colorscheme elflord
 " set spell
 set spelllang=en_us
 
+" Use smartcase
+set ignorecase
+set smartcase
+
 " Highlight search results
 set hlsearch
 

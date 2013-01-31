@@ -10,6 +10,6 @@ alias systemctl='sudo systemctl'
 alias gs='git status'
 
 # todo.sh shortcuts
-alias t='todo.sh -c'
+alias t='todo.sh'
 alias tl='t ls'
 
