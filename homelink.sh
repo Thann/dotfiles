@@ -40,7 +40,7 @@ for p in $(IFS=" "; find ./ -maxdepth 1) ; do
 		if ! $DEBUG && [ -e $TT ] ; then continue; fi # ignore if the target already exists...
 		if [ "`echo $f | tail -c 5 `" == ".swp" ] ; then continue; fi # ignore vim swp files
 
-		if ! $LINK_DIRS && [ -d $f ] ; then
+		if ! $LINK_DIRS && [ -d $f ] && [ ! -L $f ] ; then
 			$PRE_RUN mkdir -p $TT;
 		else
 			$PRE_RUN ln -s -t $(dirname $TT)  $(pwd)/$f; # dirname cuts off the trailing quote =/
