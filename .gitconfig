@@ -8,3 +8,5 @@
 	co = checkout
 [diff]
 	tool = meld
+[color]
+	ui = auto

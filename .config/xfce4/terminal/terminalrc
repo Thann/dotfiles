@@ -2,7 +2,7 @@
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 BackgroundDarkness=0.620000
 ColorForeground=#2323cfcf3a3a
-ColorPalette=#000000000000;#aaaa00000000;#0000aaaa0000;#aaaa55550000;#00000000aaaa;#aaaa0000aaaa;#000097b497b4;#aaaaaaaaaaaa;#555555555555;#ffff55555555;#5555ffff5555;#ffffffff5555;#55555555ffff;#ffff5555ffff;#4f5ec125c125;#ffffffffffff
+ColorPalette=#000000000000;#bd172a212a21;#0000aaaa0000;#aaaa55550000;#45e345e3fb41;#aaaa0000aaaa;#000097b497b4;#aaaaaaaaaaaa;#555555555555;#ffff55555555;#5555ffff5555;#ffffffff5555;#68fc68fcfb41;#ffff5555ffff;#4f5ec125c125;#ffffffffffff
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBordersDefault=TRUE
