@@ -59,4 +59,5 @@ xnoremap <C-PageDown> <Esc>:tabprev<CR>
 
 " Custom command shortcuts
 command Q q!
+command C let @/ = ""
 
