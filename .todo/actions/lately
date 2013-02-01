@@ -7,7 +7,7 @@ days=$2
 
 TMP_FILE=/tmp/lately.txt
 CUTOFF=$(date --date="$days days ago"  +%F)
-if [ $? != 0 ]; then echo UU:; action="usage"; fi
+if [ $? != 0 ]; then echo Usage:; action="usage"; fi
 CUTOFF=$(date --date="$CUTOFF" +%s)
 [ -e $TMP_FILE ] && rm $TMP_FILE
 
