@@ -30,7 +30,8 @@ git submodule update --init
 # Loop through the base files
 for p in $(IFS=" "; find ./ -maxdepth 1) ; do
 	p=$(echo $p | cut -c 3-)
-	if [ "$p" == ".git" ] || [ "$p" == ".gitmodules" ] ; then continue; fi # ignore the files & folders belonging to git
+	if [ "$p" == ".git" ] || [ "$p" == ".gitmodules" ] || [ "$p" == ".gitignore" ]
+		then continue; fi # ignore the files & folders belonging to git
 	if [ "`echo $p | cut -b -1 `" != "." ] ; then continue; fi # ignore the files & folders that don't start with a dot
 
 	# Loop through all files & folders with prefix $p
