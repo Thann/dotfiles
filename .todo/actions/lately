@@ -26,5 +26,7 @@ while read line; do
 	[ $ll -lt $CUTOFF ] || echo $line >> $TMP_FILE
 done < $TODO_DIR/done.txt
 
+if [ ! -e $TMP_FILE ]; then echo "No completed tasks in the past $days day(s)."; exit 0; fi
+
 $TODO_FULL_SH -p lf $TMP_FILE
 
