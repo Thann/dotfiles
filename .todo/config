@@ -81,3 +81,7 @@ export PRI_C=$YELLOW        # color for A priority
 # just before the list output is displayed.
 #
 # export TODOTXT_FINAL_FILTER='cat'
+
+## action preformed when none is specified
+export TODOTXT_DEFAULT_ACTION=ls
+
