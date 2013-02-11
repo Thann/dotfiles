@@ -12,4 +12,6 @@ alias gs='git status'
 # todo.sh shortcuts
 alias t='todo.sh'
 alias tl='t ls'
+alias te='t edit'
+alias tly='t lately'
 

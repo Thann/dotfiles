@@ -1,0 +1,26 @@
+#!/bin/bash
+# A simple tool to quickly edit one task in todo.txt
+
+usage="edit ITEM# [SRC]"
+
+[ "$1" = "usage" ] && {
+	echo "    $usage"
+	echo "      Edits the given task. (Requires Bash 4+)"
+	echo "      Optional argument (file name) specify the source file."
+	echo ""
+	exit 0
+}
+
+task_num=$2
+if [ -z $2 ]; then echo usage: $TODO_SH $usage; exit 1; fi
+src=$3
+[ -z $3 ] && src=todo.txt
+
+item=$(sed -n ${task_num}p $TODO_DIR/$src)
+if [ $? != 0 ]; then exit 1; fi
+
+read -e -p "$task_num: " -i """$item""" new_item
+if [ $? != 0 ]; then echo "ERROR: Requires Bash version 4 or greater!"; exit 1; fi
+
+$TODO_FULL_SH replace $task_num """$new_item""" > /dev/null
+
