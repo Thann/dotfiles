@@ -10,7 +10,7 @@ xrandr --output DVI-I-2 --auto --rotate right --right-of DVI-I-3
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 # Lower Mouse Sensitivity
-xinput --set-prop 'Razer Razer DeathAdder' 'Device Accel Constant Deceleration' 1.4
+xinput --set-prop 'Razer Razer DeathAdder' 'Device Accel Constant Deceleration' 1.8
 
 # Whore out the X session to anyone.
 xhost +
