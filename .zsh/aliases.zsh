@@ -14,4 +14,6 @@ alias t='todo.sh'
 alias tl='t ls'
 alias te='t edit'
 alias tly='t lately'
+alias tvc='t view context'
+alias tvp='t view project'
 

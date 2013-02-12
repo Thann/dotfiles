@@ -82,3 +82,6 @@ export PRI_C=$YELLOW        # color for A priority
 ## action preformed when none is specified
 export TODOTXT_DEFAULT_ACTION=ls
 
+## update line numbers after a task removal
+export TODOTXT_PRESERVE_LINE_NUMBERS=0
+
