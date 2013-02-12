@@ -13,4 +13,6 @@
 [color]
 	ui = auto
 [core]
-	pager = less -p 'diff --git'
+	pager = less -+X
+[pager]
+	diff = less -p'^diff --git' -RSs -+FX
