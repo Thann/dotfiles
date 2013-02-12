@@ -114,7 +114,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibox
 -- Create a textclock widget
-mytextclock = awful.widget.textclock(" %a %b %d, %H:%M ")
+mytextclock = awful.widget.textclock(" %a %b %d, %I:%M ")
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -440,8 +440,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- {{{ Custom Startup
 -- Autostart  (needed if not using a DE like XFCE or GNOME)
-awful.util.spawn_with_shell("dex -a -e Awesome")
--- awful.util.spawn_with_shell("xrandr --output HDMI1 --auto --primary --right-of LVDS1")
+awful.util.spawn("dex -a -e Awesome")
+awful.util.spawn("thunar --daemon")
 
 -- Custom Layout
 if screen.count() == 2 then
