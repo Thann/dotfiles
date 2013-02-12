@@ -12,3 +12,5 @@
 	tool = meld
 [color]
 	ui = auto
+[core]
+	pager = less -p 'diff --git'
