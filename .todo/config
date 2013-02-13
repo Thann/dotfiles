@@ -52,11 +52,11 @@ export REPORT_FILE="$TODO_DIR/report.txt"
 # Priorities can be any upper-case letter.
 # A,B,C are highlighted; you can add coloring for more.
 #
-export PRI_A=$LIGHT_RED		      # color for C priority
-export PRI_B=$LIGHT_BLUE      # color for B priority
-export PRI_C=$YELLOW        # color for A priority
-# export PRI_D=...            # define your own
-# export PRI_X=$WHITE         # color unless explicitly defined
+export PRI_A=$LIGHT_RED		# color for C priority
+export PRI_B=$LIGHT_BLUE	# color for B priority
+export PRI_C=$LIGHT_CYAN	# color for A priority
+export PRI_D=$LIGHT_GREEN	# color for D priority
+export PRI_X=$GREEN			# color unless explicitly defined
 
 # There is highlighting for tasks that have been done,
 # but haven't been archived yet.

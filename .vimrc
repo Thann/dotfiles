@@ -46,7 +46,7 @@ nmap <leader>c<space> <plug>NERDCommenterToggle
 xmap <leader>c<space> <plug>NERDCommenterToggle
 
 " Tagbar shortcuts
-cmap tt TagbarToggle
+command TT TagbarToggle
 nmap tt :TagbarOpenAutoClose<CR>
 
 " Custom keybinds
@@ -60,4 +60,5 @@ xnoremap <C-PageDown> <Esc>:tabprev<CR>
 " Custom command shortcuts
 command Q q!
 command C let @/ = ""
+command S set spell!
 
