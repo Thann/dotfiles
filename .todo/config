@@ -85,3 +85,6 @@ export TODOTXT_DEFAULT_ACTION=ls
 ## update line numbers after a task removal
 export TODOTXT_PRESERVE_LINE_NUMBERS=0
 
+## default number of days for lately plugin
+export TODOTXT_LATELY_DEFAULT=3
+
