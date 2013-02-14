@@ -2,8 +2,8 @@ alias ls='ls --color=auto'
 alias la='ls -lha --color=auto'
 alias ll=la
 
-#alias vim='vim -c start' #start vim in 'insert' mode
 alias vi='vim'
+alias gi='gvim'
 
 alias systemctl='sudo systemctl'
 
