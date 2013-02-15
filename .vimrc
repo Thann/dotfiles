@@ -22,7 +22,7 @@ function SuWrite()
 		e!
 	endif
 endfunction
-command W exec "let lnum=line('.')" | exec SuWrite() | exec lnum
+command W exec "let cpos=getpos('.')" | exec SuWrite() | call setpos('.', cpos)
 
 " Default indent properties
 set ts=4 sts=4 sw=4 noet ai
@@ -30,7 +30,7 @@ set ts=4 sts=4 sw=4 noet ai
 " Detect indent size and type
 autocmd BufReadPost * :DetectIndent
 " Trim trailing whitespace on save
-autocmd BufWritePre * exec "let lnum=line('.')" | :%s/\s\+$//e  | exec lnum
+autocmd BufWritePre * exec "let cpos=getpos('.')" | :%s/\s\+$//e  | call setpos('.', cpos)
 
 " Set folding options
 set foldmethod=syntax
