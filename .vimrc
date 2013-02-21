@@ -1,6 +1,8 @@
 syntax enable
 colorscheme elflord
 
+set mouse=a
+
 " set spell
 set spelllang=en_us
 
