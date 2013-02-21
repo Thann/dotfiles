@@ -1,1 +1,0 @@
-../../tagbar/doc/tagbar.txt

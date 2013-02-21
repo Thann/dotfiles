@@ -1,1 +1,0 @@
-../../detectindent/plugin/detectindent.vim
