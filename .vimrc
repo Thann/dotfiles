@@ -49,6 +49,10 @@ imap <C-e> <ESC><plug>NERDCommenterToggle i
 nmap <leader>c<space> <plug>NERDCommenterToggle
 xmap <leader>c<space> <plug>NERDCommenterToggle
 
+"Customize NERDTree commands
+let NERDTreeQuitOnOpen=1
+nmap \e :NERDTreeToggle<CR>
+
 " Tagbar shortcuts
 command TT TagbarToggle
 nmap tt :TagbarOpenAutoClose<CR>

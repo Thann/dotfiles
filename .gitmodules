@@ -7,6 +7,9 @@
 [submodule ".vim/bundle/tagbar"]
 	path = .vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
 [submodule "todo.txt-cli"]
 	path = todo.txt-cli
 	url = git://github.com/Thann/todo.txt-cli.git
