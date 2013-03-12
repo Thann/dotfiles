@@ -2,6 +2,8 @@ alias ls='ls --color=auto'
 alias la='ls -lha --color=auto'
 alias ll=la
 
+alias cd='HOME="" cd'
+
 alias vi='vim'
 alias gi='gvim'
 

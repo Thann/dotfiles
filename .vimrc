@@ -51,19 +51,22 @@ xmap <leader>c<space> <plug>NERDCommenterToggle
 
 "Customize NERDTree commands
 let NERDTreeQuitOnOpen=1
-nmap \e :NERDTreeToggle<CR>
+let g:nerdtree_tabs_open_on_new_tab=0
+let g:nerdtree_tabs_open_on_gui_startup=0
+"nmap \e :NERDTreeToggle<CR>
+nmap \e :NERDTreeSteppedOpen<CR>
 
 " Tagbar shortcuts
 command TT TagbarToggle
 nmap tt :TagbarOpenAutoClose<CR>
 
 " Custom keybinds
-nnoremap <C-PageUp> :tabnext<CR>
-nnoremap <C-PageDown> :tabprev<CR>
-inoremap <C-PageUp> <Esc>:tabnext<CR>
-inoremap <C-PageDown> <Esc>:tabprev<CR>
-xnoremap <C-PageUp> <Esc>:tabnext<CR>
-xnoremap <C-PageDown> <Esc>:tabprev<CR>
+"nnoremap <C-PageUp> :tabnext<CR>
+"nnoremap <C-PageDown> :tabprev<CR>
+"inoremap <C-PageUp> <Esc>:tabnext<CR>
+"inoremap <C-PageDown> <Esc>:tabprev<CR>
+"xnoremap <C-PageUp> <Esc>:tabnext<CR>
+"xnoremap <C-PageDown> <Esc>:tabprev<CR>
 
 " Custom command shortcuts
 command Q q!

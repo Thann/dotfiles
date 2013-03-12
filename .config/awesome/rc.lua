@@ -248,7 +248,7 @@ globalkeys = awful.util.table.join(
         end),
 
     -- Custom Shortcuts
-    awful.key({ modkey,           }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
+    awful.key({ modkey,           }, "l", function () awful.util.spawn("xscreensaver-command -lock",false) end),
 
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
