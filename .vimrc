@@ -1,5 +1,7 @@
 execute pathogen#infect()
 
+set t_Co=256
+
 syntax enable
 colorscheme elflord
 
@@ -12,8 +14,9 @@ set spelllang=en_us
 set ignorecase
 set smartcase
 
-" Highlight search results
+" Highlight search results + incremental
 set hlsearch
+set incsearch
 
 " Allow sudo-write
 function SuWrite()
@@ -69,7 +72,7 @@ nmap tt :TagbarOpenAutoClose<CR>
 "xnoremap <C-PageDown> <Esc>:tabprev<CR>
 
 " Custom command shortcuts
-command Q q!
+"command Q q!
 command C let @/ = ""
 command S set spell!
 
