@@ -3,7 +3,9 @@ setopt interactivecomments
 
 # Function to easily set the terminal title
 function st {
-	echo -n "\033]2;${@}\007"
+	if ! [[ $(tty) =~ tty ]]; then # Don't do this on a real tty.
+		echo -n "\033]2;${@}\007";
+	fi
 }
 
 # Set term title to current folder name
