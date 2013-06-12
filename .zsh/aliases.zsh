@@ -20,3 +20,9 @@ alias tly='t lately'
 alias tvc='t view context'
 alias tvp='t view project'
 
+# Total: `grep -rc thing TT`
+alias -g TT="| awk -F: '{ s+=\$2 } END { print s }' "
+
+# Count: `grep -rl thing CC`
+alias -g CC="| wc -l "
+
