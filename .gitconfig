@@ -4,11 +4,14 @@
 	prompt = false
 [alias]
 	dt = difftool
+	mt = mergetool --no-prompt
 	pl = pull --ff-only
 	co = checkout
 	df = diff --ignore-space-change
 	dc = diff --cached
 [diff]
+	tool = meld
+[merge]
 	tool = meld
 [color]
 	ui = auto
