@@ -20,13 +20,17 @@ set incsearch
 
 " Allow sudo-write
 function SuWrite()
-	doautocmd BufWritePre
-	w !sudo tee % > /dev/null
-	if v:shell_error
-		echo "Write Failed"
+	if &readonly
+		doautocmd BufWritePre
+		w !sudo tee % > /dev/null
+		if v:shell_error
+			echo "Write Failed"
+		else
+			redraw!
+			e!
+		endif
 	else
-		redraw!
-		e!
+		w
 	endif
 endfunction
 command W exec "let cpos=getpos('.')" | exec SuWrite() | call setpos('.', cpos)
@@ -63,6 +67,10 @@ nmap \e :NERDTreeSteppedOpen<CR>
 command TT TagbarToggle
 nmap tt :TagbarOpenAutoClose<CR>
 
+" Airline
+set laststatus=2
+set noshowmode
+
 " Custom keybinds
 "nnoremap <C-PageUp> :tabnext<CR>
 "nnoremap <C-PageDown> :tabprev<CR>
@@ -70,6 +78,10 @@ nmap tt :TagbarOpenAutoClose<CR>
 "inoremap <C-PageDown> <Esc>:tabprev<CR>
 "xnoremap <C-PageUp> <Esc>:tabnext<CR>
 "xnoremap <C-PageDown> <Esc>:tabprev<CR>
+
+" Disable F1 help
+map <F1> <Esc>
+imap <F1> <Esc>
 
 " Custom command shortcuts
 "command Q q!
