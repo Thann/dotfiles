@@ -71,6 +71,16 @@ nmap tt :TagbarOpenAutoClose<CR>
 set laststatus=2
 set noshowmode
 
+" Airline instantly escape visual mode
+if ! has('gui_running')
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
+endif
+
 " Custom keybinds
 "nnoremap <C-PageUp> :tabnext<CR>
 "nnoremap <C-PageDown> :tabprev<CR>
