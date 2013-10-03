@@ -40,6 +40,8 @@ set ts=4 sts=4 sw=4 noet ai
 
 " Detect indent size and type
 autocmd BufReadPost * :DetectIndent
+" Set local PWD to file location
+autocmd BufEnter * silent! lcd %:p:h
 " Trim trailing whitespace on save
 autocmd BufWritePre * exec "let cpos=getpos('.')" | :%s/\s\+$//e  | call setpos('.', cpos)
 

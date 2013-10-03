@@ -93,7 +93,7 @@ export TODOTXT_DATE_ON_ADD=1
 
 # === Custom Substitutions ===
 HIDE_DATE_SUB="sed '/^[^ ]* \(([A-Z]) \)\?[0-9]\{4\}\(-[0-9]\{2\}\)\{2\} /s/[0-9]\{4\}\(-[0-9]\{2\}\)\{2\} //'"
-TERMINAL_FIT_SUB="if [ -z '$1' ]; then sed -e '$(expr $(tput lines) - 3),\$d' -e 's/\(^\x1B\[[0-9;]*[mK]\)\?\([^\x1B]\{$(tput cols)\}\).*$/\1\2/g'; else cat; fi"
+TERMINAL_FIT_SUB="if [ -z '$1' ]; then sed -e '$(expr $(tput lines) - 3),\$d' -e 's/\(^\x1B\[[0-9;]*[mK]\)\?\([^\x1B]\{$(expr $(tput cols - 1) - 1)\}\).*$/\1\2…/g'; else cat; fi"
 #SUBBROJECT_SUB="sed s/↵/\\\n/g"
 
 export TODOTXT_FINAL_FILTER=$HIDE_DATE_SUB"|"$TERMINAL_FIT_SUB
