@@ -1,7 +1,6 @@
 colorscheme darkspectrum
 
 set nowrap
-set number
 
 set guifont=Monospace\ 11
 

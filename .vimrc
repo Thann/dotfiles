@@ -5,6 +5,8 @@ set t_Co=256
 syntax enable
 colorscheme elflord
 
+set number
+
 set mouse=a
 
 " set spell
@@ -41,7 +43,7 @@ set ts=4 sts=4 sw=4 noet ai
 " Detect indent size and type
 autocmd BufReadPost * :DetectIndent
 " Set local PWD to file location
-autocmd BufEnter * silent! lcd %:p:h
+"autocmd BufEnter * silent! lcd %:p:h
 " Trim trailing whitespace on save
 autocmd BufWritePre * exec "let cpos=getpos('.')" | :%s/\s\+$//e  | call setpos('.', cpos)
 
@@ -49,6 +51,9 @@ autocmd BufWritePre * exec "let cpos=getpos('.')" | :%s/\s\+$//e  | call setpos(
 set foldmethod=syntax
 set foldlevel=20
 map zz za
+
+" Disable Ex mode
+map Q <Nop>
 
 " Customize NERDCommenter commands
 filetype plugin on
@@ -68,6 +73,9 @@ nmap \e :NERDTreeSteppedOpen<CR>
 " Tagbar shortcuts
 command TT TagbarToggle
 nmap tt :TagbarOpenAutoClose<CR>
+
+" CtrlP
+nmap \p :CtrlPBuffer<CR>
 
 " Airline
 set laststatus=2
