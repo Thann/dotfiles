@@ -80,7 +80,7 @@ export PRI_X=$GREEN			# color unless explicitly defined
 # export TODOTXT_FINAL_FILTER='cat'
 
 ## action preformed when none is specified
-export TODOTXT_DEFAULT_ACTION=fit
+export TODOTXT_DEFAULT_ACTION=top
 
 ## update line numbers after a task removal
 export TODOTXT_PRESERVE_LINE_NUMBERS=0
