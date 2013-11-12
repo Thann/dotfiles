@@ -1,0 +1,10 @@
+[
+	{ "keys": ["ctrl+e"], "command": "toggle_comment", "args": { "block": false },
+			"context":
+			[
+				// { "key": "setting.command_mode", "operand": true },
+				{ "key": "setting.is_widget", "operand": false }
+			]
+	},
+	{ "keys": ["ctrl+r"], "command": "redo_or_repeat" },
+]

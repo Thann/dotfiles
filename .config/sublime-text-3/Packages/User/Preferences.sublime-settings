@@ -1,0 +1,14 @@
+{
+	"color_scheme": "Packages/Color Scheme - Default/Espresso Libre.tmTheme",
+	"font_size": 11,
+	"ignored_packages":
+	[
+	],
+	"rulers":
+	[
+		80
+	],
+	"show_minimap": false,
+	"trim_trailing_white_space_on_save": true,
+	"vintage_start_in_command_mode": true
+}
