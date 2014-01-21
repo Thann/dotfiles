@@ -1,6 +1,7 @@
 {
 	"color_scheme": "Packages/User/Espresso Libre Thann.tmTheme",
-	"font_size": 11,
+	"enable_tab_scrolling": false,
+	"font_size": 12,
 	"ignored_packages":
 	[
 	],
@@ -8,7 +9,6 @@
 	[
 		80
 	],
-	"show_minimap": false,
 	"trim_trailing_white_space_on_save": true,
 	"vintage_start_in_command_mode": true
 }

@@ -6,6 +6,7 @@ alias cd='HOME="" cd'
 
 alias vi='vim'
 alias gi='gvim'
+alias sb='subl3'
 
 alias systemctl='sudo systemctl'
 
@@ -26,3 +27,5 @@ alias -g TT="| awk -F: '{ s+=\$2 } END { print s }' "
 # Count: `grep -rl thing CC`
 alias -g CC="| wc -l "
 
+#Json Pretty Print
+alias -g JPP='|python -mjson.tool'
