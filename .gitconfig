@@ -19,3 +19,5 @@
 	pager = less -+X
 [pager]
 	diff = less -p'^diff --git' -RSs -+FX
+	log  = less -p'^commit \\w{40}$' -RSs -+FX
+	stash = less -+X # Needed because stash tries to use the log pager =/
