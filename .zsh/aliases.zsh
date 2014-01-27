@@ -13,7 +13,7 @@ alias systemctl='sudo systemctl'
 alias gs='git status'
 
 # todo.sh shortcuts
-alias t='todo.sh'
+alias t='noglob todo.sh'
 alias tl='t ls'
 alias ta='t add'
 alias te='t edit'
@@ -29,3 +29,8 @@ alias -g CC="| wc -l "
 
 #Json Pretty Print
 alias -g JPP='|python -mjson.tool'
+
+#noglob
+alias bundle="noglob bundle"
+alias grep="noglob grep"
+
