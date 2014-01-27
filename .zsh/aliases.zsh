@@ -34,3 +34,8 @@ alias -g JPP='|python -mjson.tool'
 alias bundle="noglob bundle"
 alias grep="noglob grep"
 
+alias ff='jobs'
+alias f1='builtin fg %1'
+alias f2='builtin fg %2'
+alias f3='builtin fg %3'
+fg() { builtin fg %$@ }
