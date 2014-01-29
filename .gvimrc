@@ -1,4 +1,4 @@
-colorscheme darkspectrum
+colorscheme espresso_libre
 
 set nowrap
 
