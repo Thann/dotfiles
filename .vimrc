@@ -75,11 +75,18 @@ command TT TagbarToggle
 nmap tt :TagbarOpenAutoClose<CR>
 
 " CtrlP
-nmap \p :CtrlPBuffer<CR>
+nmap \p :CtrlP<CR>
+let g:ctrlp_switch_buffer='ET'
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
 
 " Airline
 set laststatus=2
 set noshowmode
+"let g:airline_powerline_fonts=1
+"let g:airline#extensions#tabline#enabled = 1
 
 " Airline instantly escape visual mode
 if ! has('gui_running')
