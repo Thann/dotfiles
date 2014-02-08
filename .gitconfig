@@ -11,6 +11,8 @@
 	dc = diff --cached
 [diff]
 	tool = meld
+[user]
+	; Add email and name below
 [merge]
 	tool = meld
 [color]
