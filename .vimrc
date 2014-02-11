@@ -47,10 +47,10 @@ autocmd BufReadPost * :DetectIndent
 " Trim trailing whitespace on save
 autocmd BufWritePre * exec "let cpos=getpos('.')" | :%s/\s\+$//e  | call setpos('.', cpos)
 
-" Set folding options
-set foldmethod=syntax
-set foldlevel=20
-map zz za
+" Set folding options #DISABLED for performance reasons
+"set foldmethod=syntax
+"set foldlevel=20
+"map zz za
 
 " Disable Ex mode
 map Q <Nop>
