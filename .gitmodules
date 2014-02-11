@@ -28,3 +28,6 @@
 [submodule ".vim/bundle/ctrl-p.vim"]
 	path = .vim/bundle/ctrl-p.vim
 	url = git@github.com:kien/ctrlp.vim.git
+[submodule ".vim/bundle/file-line"]
+	path = .vim/bundle/file-line
+	url = git@github.com:bogado/file-line.git
