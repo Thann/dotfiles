@@ -19,6 +19,7 @@
 	ui = auto
 [core]
 	pager = less -+X
+	excludesfile = ~/.config/git/gitignore
 [pager]
 	diff = less -p'^diff --git' -RSs -+FX
 	log  = less -p'^commit \\w{40}$' -RSs -+FX
