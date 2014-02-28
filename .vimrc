@@ -85,11 +85,13 @@ let g:ctrlp_prompt_mappings = {
 " Airline
 set laststatus=2
 set noshowmode
-"let g:airline_powerline_fonts=1
-"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_alt_sep=' '
+" Uncomment to use patched fonts
+let g:airline_powerline_fonts=1
 
 " Airline instantly escape visual mode
 if ! has('gui_running')
+  let g:airline#extensions#tabline#enabled=1 " dont show tabline in gvim
   set ttimeoutlen=10
   augroup FastEscape
     autocmd!
