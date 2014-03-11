@@ -16,6 +16,3 @@ RPROMPT='$(git_super_status)[%{$fg[white]%}%?%{$reset_color%}]'
 autoload -U compinit
 compinit -i
 
-# Title new graphical shell instances.
-stt 2> /dev/null
-

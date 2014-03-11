@@ -12,3 +12,7 @@ function st {
 function stt {
 	st "$(basename "$(pwd)")" $@
 }
+
+# Title new graphical shell instances.
+stt 2> /dev/null
+
