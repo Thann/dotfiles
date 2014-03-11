@@ -19,6 +19,8 @@ key[Right]=${terminfo[kcuf1]}
 key[PageUp]=${terminfo[kpp]}
 key[PageDown]=${terminfo[knp]}
 key[Enter]=${terminfo[kent]}
+#key[Back]=${terminfo[kbs]}
+key[Back]="^?"
 
 # setup key accordingly
 [[ -n "${key[Home]}"    ]]  && bindkey  "${key[Home]}"    beginning-of-line
@@ -30,6 +32,12 @@ key[Enter]=${terminfo[kent]}
 [[ -n "${key[Left]}"    ]]  && bindkey  "${key[Left]}"    backward-char
 [[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
 [[ -n "${key[Enter]}"   ]]  && bindkey  "${key[Enter]}"   enter
+
+# setup keybinds for history pattern search
+bindkey '^f' history-incremental-pattern-search-backward
+bindkey -M isearch "${key[Up]}" history-incremental-search-backward
+bindkey -M isearch "${key[Down]}" history-incremental-search-forward
+bindkey -M isearch "${key[Back]}" backward-delete-word
 
 # Finally, make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid.
