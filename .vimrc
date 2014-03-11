@@ -101,6 +101,8 @@ if ! has('gui_running')
 endif
 
 " Custom keybinds
+map <S-Up> 1<C-u>
+map <S-Down> 1<C-d>
 "nnoremap <C-PageUp> :tabnext<CR>
 "nnoremap <C-PageDown> :tabprev<CR>
 "inoremap <C-PageUp> <Esc>:tabnext<CR>
