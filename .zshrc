@@ -3,9 +3,6 @@ ZSH=$HOME/.zsh
 # load zsh configurations
 for config_file ($ZSH/*.zsh) source $config_file
 
-# load syntax highlighting
-source $ZSH/zsh-syntax-highlighting/*.zsh
-
 ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 

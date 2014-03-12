@@ -13,8 +13,8 @@
 [submodule "todo.txt-cli"]
 	path = todo.txt-cli
 	url = git://github.com/Thann/todo.txt-cli.git
-[submodule "zsh-syntax-highlighting"]
-	path = zsh-syntax-highlighting
+[submodule ".zsh/zsh-syntax-highlighting"]
+	path = .zsh/zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "todo-cli-plugins"]
 	path = todo-cli-plugins
