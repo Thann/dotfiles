@@ -38,7 +38,8 @@ endfunction
 command W exec "let cpos=getpos('.')" | exec SuWrite() | call setpos('.', cpos)
 
 " Default indent properties
-set ts=4 sts=4 sw=4 noet ai
+"set ts=4 sts=4 sw=4 noet ai
+set ts=2 sts=2 sw=2 et ai
 
 " Detect indent size and type
 autocmd BufReadPost * :DetectIndent
@@ -47,10 +48,10 @@ autocmd BufReadPost * :DetectIndent
 " Trim trailing whitespace on save
 autocmd BufWritePre * exec "let cpos=getpos('.')" | :%s/\s\+$//e  | call setpos('.', cpos)
 
-" Set folding options #DISABLED for performance reasons
-"set foldmethod=syntax
-"set foldlevel=20
-"map zz za
+" Set folding options
+set foldmethod=syntax
+set foldlevel=20
+map zz za
 
 " Disable Ex mode
 map Q <Nop>
@@ -67,7 +68,6 @@ xmap <leader>c<space> <plug>NERDCommenterToggle
 let NERDTreeQuitOnOpen=1
 let g:nerdtree_tabs_open_on_new_tab=0
 let g:nerdtree_tabs_open_on_gui_startup=0
-"nmap \e :NERDTreeToggle<CR>
 nmap \e :NERDTreeSteppedOpen<CR>
 
 " Tagbar shortcuts
@@ -77,6 +77,7 @@ nmap tt :TagbarOpenAutoClose<CR>
 " CtrlP
 nmap \p :CtrlP<CR>
 let g:ctrlp_switch_buffer='ET'
+" open in tab by default
 let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
@@ -103,19 +104,12 @@ endif
 " Custom keybinds
 map <S-Up> 1<C-u>
 map <S-Down> 1<C-d>
-"nnoremap <C-PageUp> :tabnext<CR>
-"nnoremap <C-PageDown> :tabprev<CR>
-"inoremap <C-PageUp> <Esc>:tabnext<CR>
-"inoremap <C-PageDown> <Esc>:tabprev<CR>
-"xnoremap <C-PageUp> <Esc>:tabnext<CR>
-"xnoremap <C-PageDown> <Esc>:tabprev<CR>
 
 " Disable F1 help
 map <F1> <Esc>
 imap <F1> <Esc>
 
 " Custom command shortcuts
-"command Q q!
 command C let @/ = ""
 command S set spell!
 
