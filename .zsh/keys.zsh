@@ -33,8 +33,12 @@ key[Back]="^?"
 [[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
 [[ -n "${key[Enter]}"   ]]  && bindkey  "${key[Enter]}"   enter
 
+#Alt-backspace
+bindkey  '\e^?' backward-delete-word
+
 # setup keybinds for history pattern search
 bindkey '^f' history-incremental-pattern-search-backward
+bindkey '^r' history-incremental-pattern-search-backward
 bindkey -M isearch "${key[Up]}" history-incremental-search-backward
 bindkey -M isearch "${key[Down]}" history-incremental-search-forward
 bindkey -M isearch "${key[Back]}" backward-delete-word
