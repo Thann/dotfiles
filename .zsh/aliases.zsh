@@ -39,3 +39,9 @@ alias f1='builtin fg %1'
 alias f2='builtin fg %2'
 alias f3='builtin fg %3'
 fg() { builtin fg %$@ }
+
+#Git set upstream to origin/<branch>
+gsu() {
+	GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+	git branch --set-upstream-to=origin/$GIT_BRANCH $GIT_BRANCH
+}
