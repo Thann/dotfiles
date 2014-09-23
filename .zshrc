@@ -8,7 +8,7 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 
 _RTAB='$(rtab -l -t 2> /dev/null || basename `pwd`)'
 PROMPT="[%{$fg[white]%}%n%{$reset_color%}@%{$fg[white]%}%m %{$fg[white]%}${_RTAB}%{$reset_color%}% ]%(#,#,$) "
-RPROMPT='$(git_super_status)[%{$fg[white]%}%?%{$reset_color%}]'
+RPROMPT='$(git_super_status)[%{$fg[white]%}%?%(1j.%{$fg[cyan]%}&%j.)%{$reset_color%}]'
 
 # enable tab completion
 autoload -U compinit
