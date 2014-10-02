@@ -2,7 +2,7 @@ colorscheme espresso_libre
 
 set nowrap
 
-set guifont=Monospace\ 11
+set guifont=Monospace\ 12
 
 " Add horizontal scrollbar
 set guioptions+=b

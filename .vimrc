@@ -37,6 +37,27 @@ function SuWrite()
 endfunction
 command W exec "let cpos=getpos('.')" | exec SuWrite() | call setpos('.', cpos)
 
+" Move tabs around
+function ShiftTab(direction)
+     let tab_number = tabpagenr()
+     if a:direction == 0
+         if tab_number == 1
+             exe 'tabm' . tabpagenr('$')
+         else
+             exe 'tabm' . (tab_number - 2)
+         endif
+     else
+         if tab_number == tabpagenr('$')
+             exe 'tabm ' . 0
+         else
+             exe 'tabm ' . tab_number
+         endif
+     endif
+     return ''
+endfunction
+noremap <silent> <C-S-PageUp>  :call ShiftTab(0)<CR>
+noremap <silent> <C-S-PageDown> :call ShiftTab(1)<CR>
+
 " Default indent properties
 "set ts=4 sts=4 sw=4 noet ai
 set ts=2 sts=2 sw=2 et ai
@@ -102,8 +123,8 @@ if ! has('gui_running')
 endif
 
 " Custom keybinds
-map <S-Up> 1<C-u>
-map <S-Down> 1<C-d>
+map <C-Up> 1<C-u>
+map <C-Down> 1<C-d>
 
 " Disable F1 help
 map <F1> <Esc>
