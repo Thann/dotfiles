@@ -9,6 +9,11 @@ set number
 
 set mouse=a
 
+set scrolloff=5
+set sidescroll=1
+set sidescrolloff=10
+set nostartofline
+
 " set spell
 set spelllang=en_us
 
@@ -70,9 +75,10 @@ autocmd BufReadPost * :DetectIndent
 autocmd BufWritePre * exec "let cpos=getpos('.')" | :%s/\s\+$//e  | call setpos('.', cpos)
 
 " Set folding options
-set foldmethod=syntax
-set foldlevel=20
-map zz za
+" ### Disabled for performace ###
+"set foldmethod=syntax
+"set foldlevel=20
+"map zz za
 
 " Disable Ex mode
 map Q <Nop>
@@ -125,6 +131,8 @@ endif
 " Custom keybinds
 map <C-Up> 1<C-u>
 map <C-Down> 1<C-d>
+map <C-Left> z<Left><Left>
+map <C-Right> z<Right><Right>
 
 " Disable F1 help
 map <F1> <Esc>

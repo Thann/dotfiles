@@ -5,7 +5,7 @@
 (gtk_accel_path "<Actions>/terminal-window/goto-tab-3" "<Alt>3")
 ; (gtk_accel_path "<Actions>/terminal-window/help-menu" "")
 ; (gtk_accel_path "<Actions>/terminal-window/file-menu" "")
-; (gtk_accel_path "<Actions>/terminal-window/search" "<Primary><Shift>f")
+ (gtk_accel_path "<Actions>/terminal-window/search" "<Primary>f")
 ; (gtk_accel_path "<Actions>/terminal-window/next-tab" "<Primary>Page_Down")
 (gtk_accel_path "<Actions>/terminal-window/goto-tab-1" "<Alt>1")
 ; (gtk_accel_path "<Actions>/terminal-window/show-menubar" "")
