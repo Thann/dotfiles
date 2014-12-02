@@ -32,7 +32,7 @@ alias -g JPP='|python -mjson.tool'
 
 #noglob
 alias bundle="noglob bundle"
-alias grep="noglob grep"
+alias grep="noglob grep -n --color=auto"
 
 alias ff='jobs'
 alias f1='builtin fg %1'
