@@ -12,10 +12,13 @@ alias systemctl='sudo systemctl'
 
 alias gs='git status'
 
+alias be='bundle exec'
+
 # todo.sh shortcuts
 alias t='noglob todo.sh'
 alias tl='t ls'
 alias ta='t add'
+alias taa='t add (A)'
 alias te='t edit'
 alias tly='t lately'
 alias tvc='t view context'
@@ -43,5 +46,5 @@ fg() { builtin fg %$@ }
 #Git set upstream to origin/<branch>
 gsu() {
 	GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-	git branch --set-upstream-to=origin/$GIT_BRANCH $GIT_BRANCH
+	git branch --set-upstream-to=${1:-origin}/$GIT_BRANCH $GIT_BRANCH
 }
