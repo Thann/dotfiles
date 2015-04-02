@@ -7,8 +7,11 @@
 	mt = mergetool --no-prompt
 	pl = pull --ff-only
 	co = checkout
+	ch = cherry -v
+	chr = cherry -v HEAD ; reverse
 	df = diff --ignore-space-change
 	dc = diff --cached
+	refd = reflog --date=short
 [diff]
 	tool = meld
 [user]
@@ -18,8 +21,11 @@
 [color]
 	ui = auto
 [core]
+	; Makes less never print directly to stdout
 	pager = less -+X
 	excludesfile = ~/.config/git/gitignore
 [pager]
+	; Auto-search for begining of files
 	diff = less -p'^diff --git' -RSs -+FX
+	; Auto-search for begining of commits
 	log  = less -p'^commit \\w{40}$' -RSs -+FX
