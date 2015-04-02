@@ -37,7 +37,6 @@ key[Back]="^?"
 bindkey  '\e^?' backward-delete-word
 
 # setup keybinds for history pattern search
-bindkey '^f' history-incremental-pattern-search-backward
 bindkey '^r' history-incremental-pattern-search-backward
 bindkey -M isearch "${key[Up]}" history-incremental-search-backward
 bindkey -M isearch "${key[Down]}" history-incremental-search-forward
@@ -52,3 +51,4 @@ if [[ -n ${terminfo[smkx]} ]] && [[ -n ${terminfo[rmkx]} ]]; then
 	zle -N zle-line-init
 	zle -N zle-line-finish
 fi
+
