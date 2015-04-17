@@ -12,6 +12,7 @@
 	df = diff --ignore-space-change
 	dc = diff --cached
 	refd = reflog --date=short
+	mlog = "!f() { SHA=${1-HEAD}; git log \"$SHA^..$SHA\" ${@:1}; }; f" ; merge-log
 [diff]
 	tool = meld
 [user]
