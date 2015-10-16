@@ -11,8 +11,13 @@
 	chr = cherry -v HEAD ; reverse
 	df = diff --ignore-space-change
 	dc = diff --cached
+	fp = format-patch
+	dfp = diff --no-prefix ; for making patches
+	dcp = diff --cached --no-prefix
 	refd = reflog --date=short
-	mlog = "!f() { SHA=${1-HEAD}; git log \"$SHA^..$SHA\" ${@:1}; }; f" ; merge-log
+	; merge-log - shows the commits inlcuded by a merge; usage: `git mlog [commit] [log-options]`
+	mlog = "!f() { args=(\"${@-HEAD}\"); if [[ ${args[0]} == \"-\"* ]]; then args=(\"HEAD\" \"${args[@]}\"); fi; git log \"${args[0]}^..${args[0]}\" ${args[@]:1}; }; f"
+	force = push --force-with-lease
 [diff]
 	tool = meld
 [user]
