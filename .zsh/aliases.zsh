@@ -14,6 +14,8 @@ alias gs='git status'
 
 alias be='bundle exec'
 
+alias ch='chromium'
+
 # todo.sh shortcuts
 alias t='noglob todo.sh'
 alias tl='t ls'
@@ -30,10 +32,10 @@ alias -g TT="| awk -F: '{ s+=\$2 } END { print s }' "
 # Count: `grep -rl thing CC`
 alias -g CC="| wc -l "
 
-#Json Pretty Print
+# Json Pretty Print
 alias -g JPP='|python -mjson.tool'
 
-#noglob
+# noglob
 alias bundle="noglob bundle"
 alias grep="noglob grep -n --color=auto"
 
@@ -41,10 +43,20 @@ alias ff='jobs'
 alias f1='builtin fg %1'
 alias f2='builtin fg %2'
 alias f3='builtin fg %3'
+
+alias smile='echo "   ¯\_(ツ)_/¯   ಠ_ಠ   ˚▱˚   ^̮^   ◔̯◔   ◕‿◕   (^▽^)   "'
+
 fg() { builtin fg %$@ }
 
-#Git set upstream to origin/<branch>
+# Git set upstream to origin/<branch>
 gsu() {
 	GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 	git branch --set-upstream-to=${1:-origin}/$GIT_BRANCH $GIT_BRANCH
+}
+
+# Grep the list of functions and commands.
+lsf() {
+	autoload bashcompinit
+	bashcompinit
+	compgen -A function -abck | \grep --color=auto $@
 }
