@@ -6,6 +6,7 @@ syntax enable
 colorscheme elflord
 
 set number
+set nowrap
 
 set mouse=a
 
@@ -127,6 +128,9 @@ if ! has('gui_running')
     au InsertLeave * set timeoutlen=1000
   augroup END
 endif
+
+" Syntastic
+let g:syntastic_ignore_files=['ts']
 
 " Custom keybinds
 map <C-Up> 1<C-u>
