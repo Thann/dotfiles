@@ -37,3 +37,6 @@
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule ".local/share/tmux/tmux-scroll-copy-mode"]
+	path = .local/share/tmux/tmux-scroll-copy-mode
+	url = https://github.com/NHDaly/tmux-scroll-copy-mode.git
