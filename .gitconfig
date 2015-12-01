@@ -1,5 +1,9 @@
+[init]
+	templatedir = ~/.config/git/template
 [push]
 	default = current
+[rebase]
+	autosquash = true
 [difftool]
 	prompt = false
 [alias]
