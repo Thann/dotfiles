@@ -35,6 +35,9 @@ alias -g CC="| wc -l "
 # Json Pretty Print
 alias -g JPP='|python -mjson.tool'
 
+# ASCII image viewer
+alias caca="DISPLAY='' cacaview "
+
 # noglob
 alias bundle="noglob bundle"
 alias grep="noglob grep -n --color=auto"

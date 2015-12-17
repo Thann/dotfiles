@@ -51,3 +51,5 @@ zstyle '*' single-ignored show
 
 # add other completion scripts
 fpath=("$(dirname $0)/completions" $fpath)
+for config_file ($(dirname $0)/completions/*.zsh) source $config_file
+
