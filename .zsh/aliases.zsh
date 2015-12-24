@@ -36,7 +36,7 @@ alias -g CC="| wc -l "
 alias -g JPP='|python -mjson.tool'
 
 # ASCII image viewer
-alias caca="DISPLAY='' cacaview "
+alias caca="CACA_DRIVER=ncurses cacaview"
 
 # noglob
 alias bundle="noglob bundle"
