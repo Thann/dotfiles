@@ -321,7 +321,8 @@
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#F5AA7730</string>
+				<!-- <string>#F5AA7730</string> -->
+				<string>#F5AA7720</string>
 			</dict>
 		</dict>
 		<dict>
@@ -396,6 +397,63 @@
 				<string>italic</string>
 			</dict>
 		</dict>
+
+		<!-- DIFF -->
+		<dict>
+			<key>name</key>
+			<string>diff.header</string>
+			<key>scope</key>
+			<string>meta.diff, meta.diff.header</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#000E1A</string>
+				<key>fontStyle</key>
+				<string></string>
+				<key>foreground</key>
+				<string>#BDAE9D</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>diff.deleted</string>
+			<key>scope</key>
+			<string>markup.deleted</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#4C0900</string>
+				<key>foreground</key>
+				<string>#BDAE9D</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>diff.changed</string>
+			<key>scope</key>
+			<string>markup.changed</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#806F00</string>
+				<key>foreground</key>
+				<string>#BDAE9D</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>diff.inserted</string>
+			<key>scope</key>
+			<string>markup.inserted</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#154F00</string>
+				<key>foreground</key>
+				<string>#BDAE9D</string>
+			</dict>
+		</dict>
+
 	</array>
 	<key>uuid</key>
 	<string>6B90703E-4E4B-43C8-9D32-921BEDF6D725</string>
