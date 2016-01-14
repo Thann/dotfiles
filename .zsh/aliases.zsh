@@ -1,5 +1,6 @@
 alias ls='ls --color=auto'
-alias la='ls -lha --color=auto'
+alias la='ls -lha'
+alias lt='ls -t'
 alias ll=la
 
 alias cd='HOME="" cd'
@@ -51,15 +52,13 @@ alias smile='echo "   ¯\_(ツ)_/¯   ಠ_ಠ   ˚▱˚   ^̮^   ◔̯◔   ◕�
 
 fg() { builtin fg %$@ }
 
-# Git set upstream to origin/<branch>
-gsu() {
-	GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-	git branch --set-upstream-to=${1:-origin}/$GIT_BRANCH $GIT_BRANCH
-}
-
 # Grep the list of functions and commands.
 lsf() {
 	autoload bashcompinit
 	bashcompinit
 	compgen -A function -abck | \grep --color=auto $@
 }
+
+# Pipe grep into less.. with color!
+grepl() { grep --color=always $@ | less }
+

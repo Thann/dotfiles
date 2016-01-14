@@ -13,15 +13,19 @@
 	co = checkout
 	ch = cherry -v
 	chr = cherry -v HEAD ; reverse
+	chp = cherry-pick -x
 	df = diff --ignore-space-change
 	dc = diff --cached
 	fp = format-patch
 	dfp = diff --no-prefix ; for making patches
 	dcp = diff --cached --no-prefix
 	refd = reflog --date=short
+	force = push --force-with-lease
+
+	; set-upstream - usage: `git su [remote [branch]]`
+	su = "!f() { BRANCH=$(git rev-parse --abbrev-ref HEAD); git branch --set-upstream-to=${1:-origin}/${2-$BRANCH} $BRANCH; }; f"
 	; merge-log - shows the commits inlcuded by a merge; usage: `git mlog [commit] [log-options]`
 	mlog = "!f() { args=(\"${@-HEAD}\"); if [[ ${args[0]} == \"-\"* ]]; then args=(\"HEAD\" \"${args[@]}\"); fi; git log \"${args[0]}^..${args[0]}\" ${args[@]:1}; }; f"
-	force = push --force-with-lease
 [diff]
 	tool = meld
 [user]
