@@ -3,12 +3,15 @@ alias la='ls -lha'
 alias lt='ls -t'
 alias ll=la
 
+alias df="df -h"
+
 alias cd='HOME="" cd'
 
 alias vi='vim'
 alias gi='gvim'
 alias sb='subl3'
 
+alias sx=startx
 alias systemctl='sudo systemctl'
 
 alias gs='git status'
@@ -62,3 +65,6 @@ lsf() {
 # Pipe grep into less.. with color!
 grepl() { grep --color=always $@ | less }
 
+record() {
+  ffmpeg -f alsa -i pulse -f x11grab -r 25 -s 1920x1080 -i :0.0 -acodec pcm_s16le -vcodec huffyuv  Screencast.avi
+}
