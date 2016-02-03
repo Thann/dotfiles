@@ -1,37 +1,60 @@
+// Chain-Reaction!
+// Download the "Chain of Command" plugin or you'll be pissed off!
+// { "keys": ["ctrl+c"], "command": "chain", {"commands": [[""],[""]]} },
+
 [
-	{ "keys": ["ctrl+e"], "command": "toggle_comment", "args": { "block": false },
-			"context":
-			[
-				// { "key": "setting.command_mode", "operand": true },
-				{ "key": "setting.is_widget", "operand": false }
-			]
+
+	{ "keys": ["ctrl+e"], "command": "toggle_comment",
+		"args": { "block": false },
+		"context": [
+			// { "key": "setting.command_mode", "operand": true },
+			{ "key": "setting.is_widget", "operand": false }
+		]
 	},
 	{ "keys": ["ctrl+r"], "command": "redo_or_repeat" },
 
+	// "Ctrl+C" also exits insert-mode.
+	{ "keys": ["ctrl+c"], "command": "chain",
+		"args": { "commands": [["exit_insert_mode"], ["copy"]] },
+		"context": [
+			{ "key": "setting.command_mode", "operator": "equal", "operand": false },
+		]
+	},
+
+	// "Ctrl+S" also exits insert-mode.
+	{ "keys": ["ctrl+s"], "command": "chain",
+		"args": { "commands": [["exit_insert_mode"], ["save"]] } ,
+		"context": [
+			{ "key": "setting.command_mode", "operator": "equal", "operand": false },
+		]
+	},
+
 	// Open sidebar
 	{ "keys": ["\\", "e"], "command": "focus_file_on_sidebar",
-		"context":
-		[
+		"context": [
 			{ "key": "setting.command_mode", "operator": "equal", "operand": true },
 		]
 	},
-	// { "keys": ["\\", "e"], "command": "chain", "args": {"commands": [["toggle_side_bar"], ["focus_side_bar"]]},
-	// 	"context":
-	// 	[
+	// { "keys": ["\\", "e"], "command": "chain",
+	//	"args": {"commands": [["toggle_side_bar"], ["focus_side_bar"]]},
+	// 	"context": [
 	// 		{ "key": "setting.command_mode", "operator": "equal", "operand": true },
 	// 	]
 	// },
 
-	//// IN SIDEBAR ////
+	// === IN SIDEBAR === //
+	{ "keys": ["\\", "e"], "command": "sidebar_tree",
+		"context": [
+			{ "key": "control", "operand": "sidebar_tree"}
+		]
+	},
 	{ "keys": ["enter"], "command": "toggle_side_bar",
-		"context":
-		[
+		"context": [
 			{ "key": "control", "operand": "sidebar_tree"}
 		]
 	},
 	{ "keys": ["escape"], "command": "toggle_side_bar",
-		"context":
-		[
+		"context": [
 			{ "key": "control", "operand": "sidebar_tree"}
 		]
 	},
