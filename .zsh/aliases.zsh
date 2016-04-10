@@ -20,9 +20,12 @@ alias be='bundle exec'
 
 alias ch='chromium'
 
+alias temp='sensors'
+
 # todo.sh shortcuts
 alias t='noglob todo.sh'
 alias tl='t ls'
+alias tt='t top'
 alias ta='t add'
 alias taa='t add (A)'
 alias te='t edit'
@@ -66,5 +69,5 @@ lsf() {
 grepl() { grep --color=always $@ | less }
 
 record() {
-  ffmpeg -f alsa -i pulse -f x11grab -r 25 -s 1920x1080 -i :0.0 -acodec pcm_s16le -vcodec huffyuv  Screencast.avi
+  ffmpeg -f alsa -i pulse -f x11grab -r 25 -s 1920x1080 -i :0.0 -acodec pcm_s16le -vcodec huffyuv ${1-Screencast}.avi
 }

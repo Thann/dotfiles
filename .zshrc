@@ -14,3 +14,12 @@ RPROMPT='$(git_super_status)[%{$fg[white]%}%?%(1j.%{$fg[cyan]%}&%j.)%{$reset_col
 autoload -U compinit
 compinit -i
 
+# init nvm
+if [ -e /usr/share/nvm/init-nvm.sh ]; then
+	source /usr/share/nvm/init-nvm.sh
+	export PATH="./node_modules/.bin:$PATH"
+fi
+
+# add user-installed ruby bins to path.
+export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+
