@@ -20,7 +20,9 @@ alias be='bundle exec'
 
 alias ch='chromium'
 
-alias temp='sensors'
+alias temp='watch -n 5 -c -d sensors'
+
+alias pp="ping -c 1 8.8.8.8 | grep time=.\*$"
 
 # todo.sh shortcuts
 alias t='noglob todo.sh'
