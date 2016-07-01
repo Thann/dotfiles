@@ -1,5 +1,8 @@
-[init]
-	templatedir = ~/.config/git/template
+[user]
+	; Add email and name below
+;
+; DMZ
+;
 [push]
 	default = current
 [rebase]
@@ -28,8 +31,7 @@
 	mlog = "!f() { args=(\"${@-HEAD}\"); if [[ ${args[0]} == \"-\"* ]]; then args=(\"HEAD\" \"${args[@]}\"); fi; git log \"${args[0]}^..${args[0]}\" ${args[@]:1}; }; f"
 [diff]
 	tool = meld
-[user]
-	; Add email and name below
+	compactionHeuristic = true
 [merge]
 	tool = meld
 [color]
@@ -38,8 +40,12 @@
 	; Makes less never print directly to stdout
 	pager = less -+X
 	excludesfile = ~/.config/git/gitignore
+	hookspath = ~/.config/git/hooks
 [pager]
 	; Auto-search for begining of files
-	diff = less -p'^diff --git' -RSs -+FX
+	diff = "diff-highlight | less -p'^diff --git' -RSs -+FX"
 	; Auto-search for begining of commits
-	log  = less -p'^commit \\w{40}$' -RSs -+FX
+	log  = "diff-highlight | less -p'^commit \\w{40}$' -RSs -+FX"
+	show = "diff-highlight | less"
+[interactive]
+	diffFilter = diff-highlight
