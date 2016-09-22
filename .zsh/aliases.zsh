@@ -69,7 +69,23 @@ lsf() {
 
 # Pipe grep into less.. with color!
 grepl() { grep --color=always $@ | less }
+alias gl=grepl
 
 record() {
   ffmpeg -f alsa -i pulse -f x11grab -r 25 -s 1920x1080 -i :0.0 -acodec pcm_s16le -vcodec huffyuv ${1-Screencast}.avi
+}
+
+# Colorized man pages
+man() {
+		# bold=cyan
+		# underline=green
+		# standout=green / black
+    env \
+        LESS_TERMCAP_md=$'\e[1;36m' \
+        LESS_TERMCAP_me=$'\e[0m' \
+        LESS_TERMCAP_us=$'\e[1;32m' \
+        LESS_TERMCAP_ue=$'\e[0m' \
+        LESS_TERMCAP_so=$'\e[1;40;92m' \
+        LESS_TERMCAP_se=$'\e[0m' \
+            man "$@"
 }
