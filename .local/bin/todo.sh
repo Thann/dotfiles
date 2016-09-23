@@ -1,1 +1,1 @@
-../todo.txt-cli/todo.sh
+../../todo.txt-cli/todo.sh
