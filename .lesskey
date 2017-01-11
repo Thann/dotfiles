@@ -1,0 +1,3 @@
+#command
+# Prints the  current screen to stdout.
+^V pipe . cat \n
