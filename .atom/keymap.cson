@@ -1,0 +1,5 @@
+'atom-workspace atom-text-editor:not([mini])':
+  'ctrl-e': 'editor:toggle-line-comments'
+
+'body':
+  'ctrl-s': 'custom:save-and-esc'
