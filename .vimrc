@@ -42,6 +42,15 @@ function SuWrite()
 	endif
 endfunction
 command W exec "let cpos=getpos('.')" | exec SuWrite() | call setpos('.', cpos)
+command Wq exec "let cpos=getpos('.')" | exec SuWrite() | call setpos('.', cpos) | q
+" disable keybind in the terminal for this to work
+nnoremap <C-s> :W<CR>
+inoremap <C-s> <ESC>:W<CR>
+
+" Disable Ex mode
+map Q <Nop>
+" fat-finger fix
+command Q q
 
 " Move tabs around
 function ShiftTab(direction)
@@ -80,9 +89,6 @@ autocmd BufWritePre * exec "let cpos=getpos('.')" | :%s/\s\+$//e  | call setpos(
 "set foldmethod=syntax
 "set foldlevel=20
 "map zz za
-
-" Disable Ex mode
-map Q <Nop>
 
 " Customize NERDCommenter commands
 filetype plugin on
@@ -135,8 +141,13 @@ let g:syntastic_ignore_files=['ts']
 " Custom keybinds
 map <C-Up> 1<C-u>
 map <C-Down> 1<C-d>
+map <C-K> 1<C-u>
+map <C-J> 1<C-d>
+
 map <C-Left> z<Left><Left>
 map <C-Right> z<Right><Right>
+map <C-H> z<Left><Left>
+map <C-L> z<Right><Right>
 
 " Disable F1 help
 map <F1> <Esc>
