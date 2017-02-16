@@ -10,15 +10,18 @@ alias cd='HOME="" cd'
 alias vi='vim'
 alias gi='gvim'
 alias sb='subl3'
+alias at='atom'
 
 alias sx=startx
 alias systemctl='sudo systemctl'
 
+alias g='git'
 alias gs='git status'
 
 alias be='bundle exec'
 
 alias ch='chromium'
+alias dk=docker
 
 alias temp='watch -n 5 -c -d sensors'
 
@@ -43,6 +46,7 @@ alias -g CC="| wc -l "
 
 # Json Pretty Print
 alias -g JPP='|python -mjson.tool'
+alias -g JPL='|python -mjson.tool |less'
 
 # ASCII image viewer
 alias caca="CACA_DRIVER=ncurses cacaview"
@@ -70,6 +74,9 @@ lsf() {
 # Pipe grep into less.. with color!
 grepl() { grep --color=always $@ | less }
 alias gl=grepl
+alias gr="grep -r"
+alias glr="grepl -r"
+alias todo="grepl -r \"\(#\|//\) \?TODO\""
 
 record() {
   ffmpeg -f alsa -i pulse -f x11grab -r 25 -s 1920x1080 -i :0.0 -acodec pcm_s16le -vcodec huffyuv ${1-Screencast}.avi
