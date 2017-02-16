@@ -3,3 +3,7 @@
 
 'body':
   'ctrl-s': 'custom:save-and-esc'
+
+# Override vim w/ defaul
+'.platform-win32, .platform-linux':
+  'ctrl-f': 'find-and-replace:show'
