@@ -10,6 +10,7 @@
 [difftool]
 	prompt = false
 [alias]
+	lp = log -p
 	dt = difftool
 	mt = mergetool --no-prompt
 	pl = pull --ff-only

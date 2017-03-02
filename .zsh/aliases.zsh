@@ -15,6 +15,8 @@ alias at='atom'
 alias sx=startx
 alias systemctl='sudo systemctl'
 
+# git: default to status
+git() { command git ${1-status} ${@[@]:2} }
 alias g='git'
 alias gs='git status'
 
