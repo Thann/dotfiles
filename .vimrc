@@ -26,6 +26,9 @@ set smartcase
 set hlsearch
 set incsearch
 
+" use system clipboard
+set clipboard=unnamedplus
+
 " Allow sudo-write
 function SuWrite()
 	if &readonly
@@ -99,10 +102,12 @@ nmap <leader>c<space> <plug>NERDCommenterToggle
 xmap <leader>c<space> <plug>NERDCommenterToggle
 
 "Customize NERDTree commands
+set hidden " preserve buffer postion
 let NERDTreeQuitOnOpen=1
 let g:nerdtree_tabs_open_on_new_tab=0
 let g:nerdtree_tabs_open_on_gui_startup=0
 nmap \e :NERDTreeSteppedOpen<CR>
+nmap <C-\> :NERDTreeSteppedOpen<CR>
 
 " Tagbar shortcuts
 command TT TagbarToggle
@@ -156,4 +161,15 @@ imap <F1> <Esc>
 " Custom command shortcuts
 command C let @/ = ""
 command S set spell!
+
+" Cursor
+if &term =~ "xterm\\|rxvt"
+  " use an white cursor in insert mode
+  let &t_SI = "\<Esc>]12;white\x7"
+  " use a normal cursor otherwise
+  let &t_EI = "\033]112\007"
+  silent !echo -ne "\033]112\007"
+  " reset cursor when vim exits
+  autocmd VimLeave * silent !echo -ne "\033]112\007"
+endif
 
