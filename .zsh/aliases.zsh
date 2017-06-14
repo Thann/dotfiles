@@ -23,7 +23,12 @@ alias gs='git status'
 alias be='bundle exec'
 
 alias ch='chromium'
-alias dk=docker
+alias dk='docker'
+alias dkc='docker-compose'
+docker_logs_less() { docker logs $1 -f --tail ${2-0} 2>&1 | less; }
+docker_restart_logs_less() { docker restart $1 && docker_logs_less $@; }
+alias dkl='docker_logs_less'
+alias dkrl='docker_restart_logs_less'
 
 alias temp='watch -n 5 -c -d sensors'
 
