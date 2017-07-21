@@ -6,14 +6,20 @@
 [push]
 	default = current
 [rebase]
+	autostash = true
 	autosquash = true
 [difftool]
 	prompt = false
 [alias]
+	f = fetch
+	a = add
+	ap = add -up
 	lp = log -p
 	dt = difftool
+	ff = merge --ff-only
 	mt = mergetool --no-prompt
 	pl = pull --ff-only
+	plr = pull --rebase
 	co = checkout
 	ch = cherry -v
 	chr = cherry -v HEAD ; reverse
@@ -23,8 +29,13 @@
 	fp = format-patch
 	dfp = diff --no-prefix ; for making patches
 	dcp = diff --cached --no-prefix
+	stlp = stash list -p
 	refd = reflog --date=short
 	force = push --force-with-lease
+
+	st = "!f() { tig stash; }; f"
+	fix = "!f() { git commit --fixup ${1-HEAD}; }; f"
+	rmorig = "!f() { find . -name '*.orig' -delete; }; f"
 
 	; set-upstream - usage: `git su [remote [branch]]`
 	su = "!f() { BRANCH=$(git rev-parse --abbrev-ref HEAD); git branch --set-upstream-to=${1:-origin}/${2-$BRANCH} $BRANCH; }; f"
