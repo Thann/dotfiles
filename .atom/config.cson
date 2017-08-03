@@ -12,6 +12,7 @@
       "._*"
       "Thumbs.db"
       "*.pyc"
+      "*.orig"
     ]
     telemetryConsent: "limited"
   editor:
@@ -46,6 +47,7 @@
     alwaysOpenExisting: true
     focusOnReveal: false
     hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
   "vim-mode-plus":
     clearHighlightSearchOnResetNormalMode: true
     highlightSearch: true
