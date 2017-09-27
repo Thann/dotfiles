@@ -35,15 +35,25 @@
 			{ "key": "setting.command_mode", "operator": "equal", "operand": true },
 		]
 	},
+	{ "keys": ["ctrl+\\"], "command": "focus_file_on_sidebar",
+		"context": [
+			{ "key": "setting.command_mode", "operator": "equal", "operand": true },
+		]
+	},
 	// { "keys": ["\\", "e"], "command": "chain",
-	//	"args": {"commands": [["toggle_side_bar"], ["focus_side_bar"]]},
+	// 	"args": {"commands": [["toggle_side_bar"], ["focus_side_bar"]]},
 	// 	"context": [
 	// 		{ "key": "setting.command_mode", "operator": "equal", "operand": true },
 	// 	]
 	// },
 
 	// === IN SIDEBAR === //
-	{ "keys": ["\\", "e"], "command": "sidebar_tree",
+	{ "keys": ["\\", "e"], "command": "toggle_side_bar",
+		"context": [
+			{ "key": "control", "operand": "sidebar_tree"}
+		]
+	},
+	{ "keys": ["ctrl+\\"], "command": "toggle_side_bar",
 		"context": [
 			{ "key": "control", "operand": "sidebar_tree"}
 		]

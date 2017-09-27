@@ -1,14 +1,17 @@
 {
+	"always_show_minimap_viewport": true,
 	"color_scheme": "Packages/User/Espresso Libre Thann.tmTheme",
 	"enable_tab_scrolling": false,
 	"font_size": 12,
 	"ignored_packages":
 	[
 	],
+	"preview_on_click": false,
 	"rulers":
 	[
 		80
 	],
+	"theme": "Adaptive.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
 	"vintage_start_in_command_mode": true,
 	"word_wrap": false
