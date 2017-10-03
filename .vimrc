@@ -1,3 +1,7 @@
+if has('nvim')
+  set rtp^=~/.vim/
+endif
+
 execute pathogen#infect()
 
 set t_Co=256
