@@ -166,6 +166,11 @@ imap <F1> <Esc>
 command C let @/ = ""
 command S set spell!
 
+" Visual shortcuts
+vnoremap . :normal .<CR>
+vnoremap , :normal<Space>
+vnoremap I :normal i
+
 " Cursor
 if &term =~ "xterm\\|rxvt"
   " use an white cursor in insert mode
