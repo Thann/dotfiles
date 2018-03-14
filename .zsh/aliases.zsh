@@ -9,7 +9,7 @@ alias cd='HOME="" cd'
 
 alias vi='vim'
 alias gi='gvim'
-alias sb='subl3'
+alias sb='subl'
 alias at='atom'
 
 alias sx=startx
@@ -29,10 +29,19 @@ docker_logs_less() { docker logs $1 -f --tail ${2-0} 2>&1 | less; }
 docker_restart_logs_less() { docker restart $1 && docker_logs_less $@; }
 alias dkl='docker_logs_less'
 alias dkrl='docker_restart_logs_less'
+# autocomplete
+. /usr/share/zsh/site-functions/_docker
+_docker_logs_less() {
+    integer ret=1
+    words[1]='logs'
+    __docker_subcommand && ret=0
+    return ret
+}
+compdef _docker_logs_less docker_logs_less docker_restart_logs_less
 
 alias temp='watch -n 5 -c -d sensors'
 
-alias pp="ping -c 1 8.8.8.8 | grep time=.\*$"
+alias pp="ping -c 1 8.8.8.8 | \grep --color=always time=.\*$"
 
 # todo.sh shortcuts
 alias t='noglob todo.sh'
@@ -50,6 +59,8 @@ alias -g TT="| awk -F: '{ s+=\$2 } END { print s }' "
 
 # Count: `grep -rl thing CC`
 alias -g CC="| wc -l "
+
+alias -g LL='|less'
 
 # Json Pretty Print
 alias -g JPP='|python -mjson.tool'
@@ -79,7 +90,7 @@ lsf() {
 }
 
 # Pipe grep into less.. with color!
-grepl() { grep --color=always $@ | less }
+grepl() { grep --color=always $@ | less -p'^' }
 alias gl=grepl
 alias gr="grep -r"
 alias glr="grepl -r"

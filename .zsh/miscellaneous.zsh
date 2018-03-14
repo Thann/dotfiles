@@ -2,17 +2,19 @@
 setopt interactivecomments
 
 # Function to easily set the terminal title
-function st {
+st() {
 	if ! [[ $(tty) =~ tty ]]; then # Don't do this on a real tty.
-		echo -n "\033]2;${@}\007";
+    if [ -z "$1" ]; then
+      # Set term title to current folder name
+      echo -n "\033]2;$(basename $(pwd))\007";
+    else
+      echo -n "\033]2;$@\007";
+    fi
 	fi
 }
 
-# Set term title to current folder name
-function stt {
-	st "$(basename "$(pwd)")" $@
-}
+alias stt=st
 
 # Title new graphical shell instances.
-stt 2> /dev/null
+st 2> /dev/null
 

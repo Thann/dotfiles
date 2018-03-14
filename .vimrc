@@ -108,6 +108,7 @@ xmap <leader>c<space> <plug>NERDCommenterToggle
 "Customize NERDTree commands
 set hidden " preserve buffer postion
 let NERDTreeQuitOnOpen=1
+let NERDTreeIgnore = ['\.pyc$']
 let g:nerdtree_tabs_open_on_new_tab=0
 let g:nerdtree_tabs_open_on_gui_startup=0
 nmap \e :NERDTreeSteppedOpen<CR>
@@ -173,7 +174,7 @@ vnoremap I :normal i
 
 " Cursor
 if &term =~ "xterm\\|rxvt"
-  " use an white cursor in insert mode
+  " use a white cursor in insert mode
   let &t_SI = "\<Esc>]12;white\x7"
   " use a normal cursor otherwise
   let &t_EI = "\033]112\007"

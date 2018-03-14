@@ -15,6 +15,7 @@
 	a = add
 	ap = add -up
 	lp = log -p
+	ls = log --stat
 	dt = difftool
 	ff = merge --ff-only
 	mt = mergetool --no-prompt
@@ -32,6 +33,7 @@
 	stlp = stash list -p
 	refd = reflog --date=short
 	force = push --force-with-lease
+	ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
 	st = "!f() { tig stash; }; f"
 	fix = "!f() { git commit --fixup ${1-HEAD}; }; f"
@@ -45,6 +47,7 @@
 	pr = "!f() { UPS=($(git branch -vv | sed -n \"s/^\\*.*\\[\\(.*\\)\\/\\(.*\\)\\].*/\\1 \\2/p\")); URL=$(git remote -v | sed -n \"s/^${1-${UPS[0]-origin}}\\t.*github.com:\\?\\/\\?\\(.*\\)\\.git (fetch)/\\1/p\"); if [ -z \"$URL\" ]; then echo \"ERROR: no upstream '${1-${UPS[0]-origin}}'\"; else xdg-open \"https://github.com/${URL}/pull/new/${UPS[1]-$(git rev-parse --abbrev-ref HEAD)}\" &> /dev/null ; fi; }; f"
 [diff]
 	tool = meld
+	algorithm = patience
 	compactionHeuristic = true
 [merge]
 	tool = meld
@@ -63,3 +66,5 @@
 	show = "diff-highlight | less"
 [interactive]
 	diffFilter = diff-highlight
+[log]
+	date = local
