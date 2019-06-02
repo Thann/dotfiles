@@ -22,6 +22,9 @@
 	pl = pull --ff-only
 	plr = pull --rebase
 	co = checkout
+	com = commit
+	come = commit --amend
+	coma = commit --amend --no-edit
 	ch = cherry -v
 	chr = cherry -v HEAD ; reverse
 	chp = cherry-pick -x
@@ -37,6 +40,7 @@
 
 	st = "!f() { tig stash; }; f"
 	fix = "!f() { git commit --fixup ${1-HEAD}; }; f"
+	comm = "!f() { git commit -m \"${*}\"; }; f"
 	rmorig = "!f() { find . -name '*.orig' -delete; }; f"
 
 	; set-upstream - usage: `git su [remote [branch]]`
