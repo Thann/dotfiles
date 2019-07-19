@@ -40,6 +40,7 @@
 
 	st = "!f() { tig stash; }; f"
 	fix = "!f() { git commit --fixup ${1-HEAD}; }; f"
+	reb = "!f() { git rebase -i $(git merge-base --fork-point ${1-master}); }; f"
 	comm = "!f() { git commit -m \"${*}\"; }; f"
 	rmorig = "!f() { find . -name '*.orig' -delete; }; f"
 

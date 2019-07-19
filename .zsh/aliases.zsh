@@ -78,6 +78,7 @@ alias f1='builtin fg %1'
 alias f2='builtin fg %2'
 alias f3='builtin fg %3'
 
+alias rand='dd if=/dev/urandom bs=256 count=1 2>/dev/null | base64'
 alias smile='echo "   ¯\_(ツ)_/¯   ಠ_ಠ   ˚▱˚   ^̮^   ◔̯◔   ◕‿◕   (^▽^)   "'
 
 fg() { builtin fg %$@ }
@@ -114,3 +115,5 @@ man() {
         LESS_TERMCAP_se=$'\e[0m' \
             man "$@"
 }
+lolman() { command man ${@} | lolcat --force | less }
+#alias man=lolman
