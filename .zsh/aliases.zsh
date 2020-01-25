@@ -117,3 +117,11 @@ man() {
 }
 lolman() { command man ${@} | lolcat --force | less }
 #alias man=lolman
+
+# extract and write
+zdd() {
+  lsblk "$2"
+  unzip -l "$1"
+  numfmt --to=iec-i --suffix=B --format="%.3f" $(unzip  -l "$1"  | tail -n1 | awk '{print $1}')
+  unzip -p "$1" | dd "of=$2" bs=64k oflag=dsync status=progress
+}
