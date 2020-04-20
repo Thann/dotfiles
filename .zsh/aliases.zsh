@@ -11,6 +11,7 @@ alias vi='vim'
 alias gi='gvim'
 alias sb='subl'
 alias at='atom'
+alias vim='nvim'
 
 alias sx=startx
 alias systemctl='sudo systemctl'
@@ -78,7 +79,6 @@ alias f1='builtin fg %1'
 alias f2='builtin fg %2'
 alias f3='builtin fg %3'
 
-alias rand='dd if=/dev/urandom bs=256 count=1 2>/dev/null | base64'
 alias smile='echo "   ¯\_(ツ)_/¯   ಠ_ಠ   ˚▱˚   ^̮^   ◔̯◔   ◕‿◕   (^▽^)   "'
 
 fg() { builtin fg %$@ }
@@ -118,10 +118,12 @@ man() {
 lolman() { command man ${@} | lolcat --force | less }
 #alias man=lolman
 
+rand() { dd if=/dev/urandom bs="${1-256}" count=1 2>/dev/null | base64 }
+
 # extract and write
 zdd() {
   lsblk "$2"
   unzip -l "$1"
   numfmt --to=iec-i --suffix=B --format="%.3f" $(unzip  -l "$1"  | tail -n1 | awk '{print $1}')
-  unzip -p "$1" | dd "of=$2" bs=64k oflag=dsync status=progress
+  unzip -p "$1" | sudo dd "of=$2" bs=64k oflag=dsync status=progress
 }
