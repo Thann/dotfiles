@@ -69,6 +69,7 @@ alias -g JPL='|python -mjson.tool |less'
 
 # ASCII image viewer
 alias caca="CACA_DRIVER=ncurses cacaview"
+alias mpc="mpv --really-quiet --image-display-duration=inf --vo=tct"
 
 # noglob
 alias bundle="noglob bundle"
