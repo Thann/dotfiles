@@ -19,6 +19,9 @@ toggle-on-all-workspaces=['<Shift><Super>t']
 move-to-monitor-up=@as []
 switch-to-workspace-up=['<Super>Up']
 
+[org/gnome/desktop/wm/preferences]
+button-layout='appmenu:minimize,close'
+
 [org/gnome/desktop/peripherals/touchpad]
 natural-scroll=false
 two-finger-scrolling-enabled=true
