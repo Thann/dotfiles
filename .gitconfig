@@ -22,7 +22,9 @@
 	mt = mergetool --no-prompt
 	pl = pull --ff-only
 	plr = pull --rebase
+	all = submodule foreach git
 	pall = submodule foreach git pull
+	foreach = submodule foreach
 	co = checkout
 	com = commit
 	come = commit --amend
@@ -35,7 +37,6 @@
 	fp = format-patch
 	dfp = diff --no-prefix ; for making patches
 	dcp = diff --cached --no-prefix
-	stlp = stash list -p
 	refd = reflog --date=short
 	force = push --force-with-lease
 	ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
@@ -44,6 +45,7 @@
 	fix = "!f() { git commit --fixup ${1-HEAD}; }; f"
 	reb = "!f() { git rebase -i $(git merge-base --fork-point ${1-master}); }; f"
 	comm = "!f() { git commit -m \"${*-WIP}\"; }; f"
+	dfork = "!f() { git diff $(git merge-base --fork-point ${1-master}); }; f" # diff since last fork
 	rmorig = "!f() { find . -name '*.orig' -delete; }; f"
 
 	; grep-blame
@@ -52,6 +54,8 @@
 	su = "!f() { BRANCH=$(git rev-parse --abbrev-ref HEAD); git branch --set-upstream-to=${1:-origin}/${2-$BRANCH} $BRANCH; }; f"
 	; merge-log - shows the commits inlcuded by a merge; usage: `git mlog [commit] [log-options]`
 	mlog = "!f() { args=(\"${@-HEAD}\"); if [[ ${args[0]} == \"-\"* ]]; then args=(\"HEAD\" \"${args[@]}\"); fi; git log \"${args[0]}^..${args[0]}\" ${args[@]:1}; }; f"
+	; Auto-search for begining of stashes
+	stlp = "!f() { git --no-pager stash list -p --color=always | diff-highlight | less -p'^stash' -RSs -+FX; }; f"
 	; opens a pull-request on github
 	pr = "!f() { UPS=($(git branch -vv | sed -n \"s/^\\*.*\\[\\(.*\\)\\/\\(.*\\)\\].*/\\1 \\2/p\")); URL=$(git remote -v | sed -n \"s/^${1-${UPS[0]-origin}}\\t.*github.com:\\?\\/\\?\\(.*\\)\\.git (fetch)/\\1/p\"); if [ -z \"$URL\" ]; then echo \"ERROR: no upstream '${1-${UPS[0]-origin}}'\"; else xdg-open \"https://github.com/${URL}/pull/new/${UPS[1]-$(git rev-parse --abbrev-ref HEAD)}\" &> /dev/null ; fi; }; f"
 [diff]
